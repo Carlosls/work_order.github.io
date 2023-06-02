@@ -121,23 +121,25 @@ function operar (){
         minute = clock.getMinutes();
 
         var horatotal = hour - sumahora;
-        if (horatotal < 0 ) {
-        horatotal = 24 +horatotal;
-        }
+       
       if (minute > sumaminuto ){
+
+        if (horatotal < 0 ) {
+            horatotal = 24 +horatotal;
+            }
         var minutototal  = minute - sumaminuto;
-        document.getElementById('horaestada').value = " " + horatotal +" : " + minutototal;
+        document.getElementById('horaestada').value = " " + horatotal +" : " + minutototal +" : "+ "00";
       }else{
             var horatotal = hour - sumahora-1;
             var minutototal  =  60-( sumaminuto  - minute);
        
-        document.getElementById('horaestada').value= " " + horatotal +" : " + minutototal;
+        document.getElementById('horaestada').value= " " + horatotal +" : " + minutototal+" : "+ "00";
       }
 
 
       
        console.log(horatotal,minutototal);
-       document.getElementById('mostraracumulada').value= " " + sumahora +" : " + sumaminuto;
+       document.getElementById('mostraracumulada').value= " " + sumahora +" : " + sumaminuto + " : "+"00";
        
         
         
