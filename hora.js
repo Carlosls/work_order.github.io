@@ -85,7 +85,7 @@ function operar (){
     var horasllenas = [h1,h2,h3,h4,h5];
     var minutosllenar = [m1,m2,m3,m4,m5];
     var sumahora =0;
-    var sumaminuto = 0;
+    var sumaminuto=0;
     
 
     //horas 
@@ -108,7 +108,8 @@ function operar (){
                     sumahora =sumahora+1;
                     sumaminuto = sumaminuto-60;
                 }
-                n++;
+                n++; 
+                
             }else{
                 n++;
             }
