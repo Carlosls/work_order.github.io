@@ -120,13 +120,18 @@ function operar (){
         hour = clock.getHours();
         minute = clock.getMinutes();
 
-        var horatotal = hour - sumahora;
+      
+        var horatotal = hour-sumahora;
+
+        if(horatotal < 0 )
+        { horatotal = horatotal *-1;
+            horatotal = 24-horatotal;
+        }
+
        
       if (minute > sumaminuto ){
 
-        if (horatotal < 0 ) {
-            horatotal = 24 +horatotal;
-            }
+    
         var minutototal  = minute - sumaminuto;
         document.getElementById('horaestada').value = " " + horatotal +" : " + minutototal +" : "+ "00";
       }else{
