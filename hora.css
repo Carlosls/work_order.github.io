@@ -1,0 +1,48 @@
+img {
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    width: 250 px;
+    height: 250 px;
+    object-fit: cover; 
+    border: 2px solid #005539;
+
+}
+
+/*html {
+  background-color: lavender;
+    
+}*/
+
+#contenedor
+{
+    background-image: linear-gradient(106.6deg,rgba(255,155,68,1)11%, rgba(244,55,32,1)106%);
+    /*margin-bottom: 50px;*/
+  
+
+}
+#color-texto{
+color: white;
+
+}
+#inn {
+
+margin-left:15px;
+}
+input[type="tel"]{
+    width: 70px;
+    height: 38px;
+    font-size: 16px;
+    font-family: 'Open Sans', Snas-Serif !important;
+    border-radius: 10px;
+  text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid white;
+}
+#operador{
+    border-radius: 3px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    opacity: .4;
+}
