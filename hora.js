@@ -74,22 +74,32 @@ function operar (){
     let h3 = parseInt(document.getElementById('hora3').value);
     let h4 = parseInt(document.getElementById('hora4').value);
     let h5 = parseInt(document.getElementById('hora5').value);
+    let h6 = parseInt(document.getElementById('hora6').value);
+    let h7 = parseInt(document.getElementById('hora7').value);
+    let h8 = parseInt(document.getElementById('hora8').value);
+    let h9 = parseInt(document.getElementById('hora9').value);
+    let h10 = parseInt(document.getElementById('hora10').value);
 
     let m1 = parseInt(document.getElementById('minuto1').value);
     let m2 = parseInt(document.getElementById('minuto2').value);
     let m3 = parseInt(document.getElementById('minuto3').value);
     let m4 = parseInt(document.getElementById('minuto4').value);
     let m5 = parseInt(document.getElementById('minuto5').value);
+    let m6 = parseInt(document.getElementById('minuto6').value);
+    let m7 = parseInt(document.getElementById('minuto7').value);
+    let m8 = parseInt(document.getElementById('minuto8').value);
+    let m9 = parseInt(document.getElementById('minuto9').value);
+    let m10 = parseInt(document.getElementById('minuto10').value)
     
 
-    var horasllenas = [h1,h2,h3,h4,h5];
-    var minutosllenar = [m1,m2,m3,m4,m5];
+    var horasllenas = [h1,h2,h3,h4,h5,h6,h7,h8,h9,h10];
+    var minutosllenar = [m1,m2,m3,m4,m5,m6,m7,m8,m9,m10];
     var sumahora =0;
     var sumaminuto=0;
     
 
     //horas 
-    for (var i=0; i<5; ){
+    for (var i=0; i<10; ){
         if(horasllenas[i] > 0 ){
             sumahora = sumahora +horasllenas[i];
             i++; //document.getElementById('mostrar-acumulado').value=sumahora;
@@ -100,7 +110,7 @@ function operar (){
 
         }
         // minutos
-        for (var n=0; n<5;){
+        for (var n=0; n<10;){
             if(minutosllenar[n]>0){
                 sumaminuto = sumaminuto+minutosllenar[n];
                 if(sumaminuto >= 60)
