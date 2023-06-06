@@ -21,7 +21,7 @@ h.textContent = nombre;
 document.querySelector('html').onclick = alertar;
 //onclick sirve para mostar  */
 
-let miimagen = document.querySelector('img');
+/*let miimagen = document.querySelector('img');
 miimagen.onclick = function() {
     let src = miimagen.getAttribute('src');
     if (src === 'imagenes/logo1.png'){
@@ -29,7 +29,7 @@ miimagen.onclick = function() {
     } else{
         miimagen.setAttribute ('src',"imagenes/logo1.png" );
     }
-}
+}*/
 
 
 console.log('tiempo');

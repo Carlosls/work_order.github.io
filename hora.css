@@ -28,6 +28,10 @@
 
 }
 
+#registros{
+  border-radius: 10px;
+}
+
 #contenedor_horas_min{
   background-color: rgba(46,128,196,1);
   border-radius: 10px;
@@ -51,10 +55,21 @@ input[type="tel"]{
     margin-bottom: 10px;
     border: 1px solid white;
 }
+
 #operador{
-    border-radius: 3px;
+    border-radius: 5px;
     width: 100px;
     height: 50px;
-    background-color: black;
-    opacity: .4;
+    background-color: red;
+    opacity: .7;
+}
+input[type="text1"]{
+  width: 200px;
+  height: 38px;
+  font-size: 16px;
+  font-family: 'Open Sans', Snas-Serif !important;
+  border-radius: 10px;
+text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid white;
 }

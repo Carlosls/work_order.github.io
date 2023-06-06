@@ -15,7 +15,7 @@
   <div class="container-fluid" id='contenedor'>
     <DIV><BR></BR></DIV>
         <div class="wors">
-          <img src="imagenes/logo2.png" alt="logo2" width="100" height="100" id="logos">
+          <img src="imagenes/logo1.png" alt="logo2" width="100" height="100" id="logos">
         </div>
  <!-- aca termina contenedor logo--> 
 
@@ -69,11 +69,46 @@
            
               <div class="col-3" id="contendor_operador" style="text-align: center;">
                 <form action="" id="limpiartod">
-                <div><h3 id="color-texto">tiempo acumulado</h3><input type="text" id="mostraracumulada" style="text-align: center;" ></div>
-                <div><h3 id="color-texto">hora inicio WO</h3><input type="text" id="horaestada" style="text-align: center;" ></div>
+                <div><h3 id="color-texto">TIEMPO ACUMULADO</h3><input type="text1" id="mostraracumulada" style="text-align: center;" ></div>
+                <div><h3 id="color-texto">HORA QUE INCIO FALLA </h3><input type="text1" id="horaestada" style="text-align: center;" ></div>
                 </form>
-                <div><button id="operador" onclick="operar();"><h3 id="color-texto">Operar</h3></button></div>
-                <div><button id="operador" onclick="limpiar();"><h3 id="color-texto">limpiar</h3></button></div>
+
+                <br><br>
+                <div><button id="operador" onclick="operar();"><h3 id="color-texto" >Operar</h3></button></div>
+                <div><button id="operador" onclick="limpiar();"><h3 id="color-texto" >limpiar</h3></button></div>
+
+                
+              </div>
+              <div class="col-2">
+                <div class="">
+                <form action="#">
+                  <label for="lang"><H3 id="color-texto" style="text-align: center;">selecione la region</H3></label>
+                  <select name="lenguajes" id="lang">
+                    <option value="G1">GT_EX METRO NORTE</option>
+                    <option value="G2"> GT_EX METRO SUR</option>
+                    <option value="G3">GT_EX CENTRAL </option>
+                    <option value="G4">GT_EX OCCIDENTE</option>
+                    <option value="G5">GT_EX ORIENTE</option>
+                    <option value="G6">GT_IN METRO</option>
+                    <option value="G7">GT_IN CENTRAL</option>
+                    <option value="G8">GT_IN ORIENTE</option>
+                    <option value="G9">GT_IN OCCIDENTE</option>
+                    <option value="S1">SV_DESPACHO</option>
+                    <option value="S2">SV_PLEX CENTRAL</option>
+                    <option value="68SIy3Te4Bkz">SV_PLEX OCCIDENTAL</option>
+                    <option value="HN1">HN_PLANTA INTERNA</option>
+                    <option value="HN2">HN_PLANTA EXTERNA</option>
+                    <option value="NI1">NI_PLANTA INTERNA</option>
+                    <option value="NI2">NI_PLANTA EXTERNA</option>
+                    <option value="CR1">CCR COSTA RICA</option>
+                    <option value="CRP1">CCR PANAMA </option>
+                    <option value="CRP2">PLANTA EXTERNA PANAMA </option>
+
+                  </select>
+                 </form>
+                </div>
+            
+
               </div>
               
           </div>
