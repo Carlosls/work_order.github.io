@@ -172,6 +172,13 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
+        
 
     } if (codigo == "G2"){
         document.getElementById('res1').innerHTML = '1/4'+ " " + "Elmer Torres" +"  " + "58260888" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
@@ -180,6 +187,12 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
   
     }
     
@@ -190,6 +203,12 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
   
     }
     if (codigo == "G4"){
@@ -199,6 +218,12 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
   
     }
     if (codigo == "G5"){
@@ -208,6 +233,12 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
   
     }
     if (codigo == "G6"){
@@ -217,6 +248,12 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
         document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
   
     }
     if (codigo == "G7"){
@@ -228,6 +265,10 @@ function operar (){
         document.getElementById('res6').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
         document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
+        
   
     }
     if (codigo == "G8"){
@@ -240,7 +281,9 @@ function operar (){
         document.getElementById('res7').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
         document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-  
+        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
+       
     }
     if (codigo == "G9"){
         document.getElementById('res1').innerHTML = '1/4'+ " " + "Luis recinos" +"  " + "58261474" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
@@ -253,7 +296,8 @@ function operar (){
         document.getElementById('res8').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
         document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
         document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-  
+        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+        
     }
     if (codigo == "S1"){
         document.getElementById('res1').innerHTML = '1/4'+ " " + "Ricardo de Paz" +"  " + "50378432633" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
@@ -265,6 +309,8 @@ function operar (){
         document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
         document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
         document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
   
     }
     /*let combo = document.getElementById('formularios');
@@ -309,7 +355,9 @@ function limpiar (){
     limpiarr1.reset(); 
     limpiartod.reset();
 
+
 }
+
 
 // ver datos de horas 
 //function reloj (){
