@@ -40,13 +40,10 @@ function login () {
 
         console.log(user);
         console.log(pass);
-
             if(user== "cnoc" & pass == "cnoc") {
                 //alert('datos correctos');
                window.location.href = "index1.html";
-
             }else{ alert('ingrese los datos correctos');}
-    
 
 }
 
