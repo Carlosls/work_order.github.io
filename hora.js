@@ -33,19 +33,19 @@ miimagen.onclick = function() {
 
 // ingrear a la pagina de inicio 
 
-
 function login () {
-        var user = document.getElementById('usuario').value;
-        var pass = document.getElementById('contrasena').value;
+    var user = document.getElementById('usuario').value;
+    var pass = document.getElementById('contrasena').value;
+        if(user== "cnoc" && pass == "cnoc") {
+            //alert('datos correctos');
+           window.location.href = "calculadora.html";
 
-        console.log(user);
-        console.log(pass);
-            if(user== "cnoc" & pass == "cnoc") {
-                //alert('datos correctos');
-               window.location.href = "index1.html";
-            }else{ alert('ingrese los datos correctos');}
+        }else{ alert('ingrese los datos correctos');}
 
 }
+
+
+
 
 
 console.log('tiempo');
