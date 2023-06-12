@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas_CNOC</title>
+    <link rel="stylesheet" href="hora.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body id="ssss">
+
+  <!--contenedor de logo -->
+  <div class="container-fluid" id='contenedor'>
+    <DIV><BR></BR></DIV>
+        <div class="wors">
+          <img src="imagenes/logo1.png" alt="logo2" width="100" height="100" id="logos">
+        </div>
+ <!-- aca termina contenedor logo--> 
+
+ <!--aca empieza contenedor de datos-->
+    <div class="container-fluid" id="contenedor">
+          <BR></BR>
+        <div class="row"><h1 id="color-texto" style="text-align: center;"> Calculadora de  Work Order</h1></div>
+        <BR></BR>
+        <BR></BR>
+        
+      
+
+        <div class="row" id="contenedor_horas_min"  >
+          <div class="col-2"></div>
+          <!--horas -->
+              
+              <div class="col-1"  style="text-align: center;" id="horass">
+                <form action="" id="limpiarr" style="text-align: center;">
+                  <h3 id="color-texto" style="text-align: left;">HORA</h3>
+                <div class="col-1" ><input type="tel" id="hora1" placeholder="00"  ></div>
+                <div class="col-1" ><input type="tel" id="hora2" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora3" placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="hora4" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora5" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora6" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora7" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora8" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora9" placeholder="00" ></div>
+                <div class="col-1" ><input type="tel" id="hora10" placeholder="00" ></div>
+              </form>
+              
+              </div>
+              
+           <!--minutos-->
+              <div class="col-1"   style="text-align: center;">
+                <form action="" id="limpiarr1">
+                  <h3 id="color-texto" style="text-align: left;">MINU</h3>
+                <div class="col-1" style="tel;"><input type="tel"  id="minuto1"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto2"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto3"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto4"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto5"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto6"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto7"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto8"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto9"  placeholder="00"></div>
+                <div class="col-1" ><input type="tel" id="minuto10"  placeholder="00"></div>
+              </form>
+              </div>
+              
+           
+              <div class="col-3" id="contendor_operador" style="text-align: center;">
+                <form action="" id="limpiartod">
+                <div><h3 id="color-texto">TIEMPO ACUMULADO</h3><input type="text1" id="mostraracumulada" style="text-align: center;" ></div>
+                <div><h3 id="color-texto">HORA QUE INCIO FALLA </h3><input type="text1" id="horaestada" style="text-align: center;" ></div>
+                </form>
+
+                <br><br>
+                <div><button id="operador" onclick="operar();"><h3 id="color-texto" >Operar</h3></button></div>
+                <div><button id="operador" onclick="limpiar();"><h3 id="color-texto" >limpiar</h3></button></div>
+
+                
+              </div>
+
+              <div class="col-2">
+                <div class="">
+                <form action="#" name="formulario_region"  >
+                  <label for="lang"><H3 id="color-texto" style="text-align: center;">selecione la region</H3></label>
+                  <select name="regiones" id="formularios" >
+                    <option value="G1">GT_EX METRO NORTE</option>
+                    <option value="G2"> GT_EX METRO SUR</option>
+                    <option value="G3">GT_EX CENTRAL </option>
+                    <option value="G4">GT_EX OCCIDENTE</option>
+                    <option value="G5">GT_EX ORIENTE</option>
+                    <option value="G6">GT_IN METRO</option>
+                    <option value="G7">GT_IN CENTRAL</option>
+                    <option value="G8">GT_IN ORIENTE</option>
+                    <option value="G9">GT_IN OCCIDENTE</option>
+                    <option value="S1">SV_DESPACHO</option>
+                    <option value="S2">SV_PLEX CENTRAL</option>
+                    <option value="68SIy3Te4Bkz">SV_PLEX OCCIDENTAL</option>
+                    <option value="HN1">HN_PLANTA INTERNA</option>
+                    <option value="HN2">HN_PLANTA EXTERNA</option>
+                    <option value="NI1">NI_PLANTA INTERNA</option>
+                    <option value="NI2">NI_PLANTA EXTERNA</option>
+                    <option value="CR1">CCR COSTA RICA</option>
+                    <option value="CRP1">CCR PANAMA </option>
+                    <option value="CRP2">PLANTA EXTERNA PANAMA </option>
+                   </select>
+                </form>
+                </div>
+              </div>
+              
+          </div>
+          
+          <form action="" id="limpiar3">
+           <div class="row" id="contenedor-tablas">
+            <div id="res1" style="text-align: center;"></div>
+            <div id="res2" style="text-align: center;"></div>
+            <div id="res3" style="text-align: center;"></div>
+            <div id="res4" style="text-align: center;"></div>
+            <div id="res5" style="text-align: center;"></div>
+            <div id="res6" style="text-align: center;"></div>
+            <div id="res7" style="text-align: center;"></div>
+            <div id="res8" style="text-align: center;"></div>
+            <div id="res9" style="text-align: center;"></div>
+            <div id="res10" style="text-align: center;"></div>
+            <div id="res11" style="text-align: center;"></div>
+          </form>
+           </div>
+         </div>
+     </div>
+
+     
+     
+     <div class="row">
+        <!--<img src="imagenes/porta.JPEG"   >-->
+     </div>
+  <!--aca termina  datos-->
+  </div>
+  
+   
+
+    
+
+   
+    
+     
+   
+
+
+
+      
+
+ 
+  
+</body>
+<script src="hora.js"></script>
+</html>
