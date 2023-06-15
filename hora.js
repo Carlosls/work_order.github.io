@@ -172,6 +172,11 @@ function operar (){
       
        console.log(horatotal,minutototal);
        document.getElementById('mostraracumulada').value= " " + sumahora +" : " + sumaminuto + " : "+"00";
+
+
+
+
+      
       
        //operar mis tablas de escalaciones
        
@@ -329,6 +334,86 @@ function operar (){
         document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
   
     }
+    if (codigo == "S2"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Manrique Urias" +"  " + "50378030697" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Jairo Ortiz" +"  " + "50378680314" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
+        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+    }
+    if (codigo == "S3 "){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Inmer Coreas" +"  " + "50378664767" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Willian Escobar" +"  " + "50379544238" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
+        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+    }
+    if (codigo == "S4"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Jimmy Zelaya" +"  " + "50379869465" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Willian Escobar" +"  " + "50378680314" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
+        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
+        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
+        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
+        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
+        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
+        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+    }
+    if (codigo == "HN1"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Luis Sandres" +"  " + "50489904245" + "  " +"2.5 horas" + " " +  (horatotal+2.5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Franklin Hueso" +"  " + "50489904208" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Manuel Larios" +"  " + "50431921638" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
+    }
+    if (codigo == "HN2"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ana Carolina Ordoñez" +"  " + "50433915065" + "  " +"2.5 horas" + " " +  (horatotal+2.5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
+    }
+    if (codigo == "NI1"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Nacxhitl Bernardino" +"  " + "50587134513" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Marlon Jaime" +"  " + "50588500414" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Norman Selva" +"  " + "50588561050" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Mario Hurtado" +"  " + "50588538938" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+    }
+    if (codigo == "NI2"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Diester Lira" +"  " + "50588524472" + "  " +"2horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Wilfredo Arauz" +"  " + "50589304959" + "  " +"3 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gaddy Zepeda" +"  " + "50588501214" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Mario Huratado" +"  " + "50588538938" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+    }
+    if (codigo == "CR1"){
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ingeniero IM" +"  " + "506-70028958" + "  " +"2horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/4'+ " " + "Marco Salazar" +"  " + "506-70020778" + "  " +"3 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gilberto Fernandez" +"  " + "506-70029441" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res4').innerHTML = '4/4'+ " " + "Luis Ivan Ortiza" +"  " + "506-70025268" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+    }
+
+    if (codigo == "CRP1"){
+        document.getElementById('res1').innerHTML = '1/3'+ " " + "CCR PANAMÁ" +"  " + "MOVIL: 507-62284503 , FIJO: 507-29411891" + "  " +"Inmeditado" + " " +  (horatotal) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/3'+ " " + "CCR PANAMÁ" +"  " + "MOVIL: 507-62284503 , FIJO: 507-29411891" + "  " +"1 horas" + " " +  (horatotal+1) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gerente NOC" +"  " + "507-66703927" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+    }
+    if (codigo == "CRP2"){
+        document.getElementById('res1').innerHTML = '1/3'+ " " + "Joaquin Carrasco" +"  " + " 507-62053224" + "  " +"1 hora" + " " +  (horatotal+1) + ":" +minutototal +":"+ "00";
+        document.getElementById('res2').innerHTML = '2/3'+ " " + "Luniel Castillo" +"  " + " 507-62045572" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gerente técnico" +"  " + " " + "  " +"3  horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+    }
     /*let combo = document.getElementById('formularios');
     let selected = combo.options[combo.selecedIndex].text;
    alert(selected);*/
@@ -370,9 +455,22 @@ function limpiar (){
     limpiarr.reset(); 
     limpiarr1.reset(); 
     limpiartod.reset();
-
-
+   
+    document.getElementById('res1').innerHTML = '';
+    document.getElementById('res2').innerHTML = '';
+    document.getElementById('res3').innerHTML = '';
+    document.getElementById('res4').innerHTML = '';
+    document.getElementById('res5').innerHTML = '';
+    document.getElementById('res6').innerHTML = '';
+    document.getElementById('res7').innerHTML = '';
+    document.getElementById('res8').innerHTML = '';
+    document.getElementById('res9').innerHTML = '';
+    document.getElementById('res10').innerHTML = '';
+    document.getElementById('res11').innerHTML = '';
+    
+   
 }
+
 
 
 // ver datos de horas 

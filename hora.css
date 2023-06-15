@@ -31,7 +31,7 @@
 }
 
 #contenedor_horas_min{
-
+ 
   border-radius: 10px;
   position: relative;
   background: transparent;
@@ -271,3 +271,6 @@ background: #162938;
 
 }
  
+#contenedor-tablas {
+  border: solid 3px;
+}
