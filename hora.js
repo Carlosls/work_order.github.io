@@ -380,7 +380,7 @@ function operar (){
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
     }
     if (codigo == "HN2"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ana Carolina Ordoñez" +"  " + "50433915065" + "  " +"2.5 horas" + " " +  (horatotal+2.5) + ":" +minutototal +":"+ "00";
+        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ana Carolina Ordoñez" +"  " + "50433915065" + "  " +"2.5 horas" + " " +  (horatotal+2) + ":" +(minutototal+30)+":"+ "00";
         document.getElementById('res2').innerHTML = '2/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
         document.getElementById('res3').innerHTML = '3/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
         document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
