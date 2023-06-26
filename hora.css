@@ -86,8 +86,11 @@ text-align: center;
 }
 
 #contenedor-tablas{
-  background-color: white;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
   border-radius: 10px;
+ 
+  
 
 /* aca va el estlilo de pagina de inicio*/
 
@@ -271,6 +274,19 @@ background: #162938;
 
 }
  
-#contenedor-tablas {
-  border: solid 3px;
+
+
+#tablass {
+width: auto;
+margin: auto;
+border-radius: 10px;
 }
+h4{
+  text-align: center;
+}
+
+ 
+  
+
+
+

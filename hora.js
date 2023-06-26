@@ -147,272 +147,349 @@ function operar (){
         hour = clock.getHours();
         minute = clock.getMinutes();
 
-      
+      // fin de obtener hora actual
+
+      //incio hora de inicio de falla 
         var horatotal = hour-sumahora;
 
-        if(horatotal < 0 )
-        { horatotal = horatotal *-1;
-            horatotal = 24-horatotal;
+        if(horatotal <=0 )
+        { horatotal = horatotal *(-1);
+            horatotal = 24-(horatotal);
         }
-
        
-      if (minute > sumaminuto ){
-
-    
+      if (minute => sumaminuto ){
+        if(horatotal == 24){horatotal = 0;}
+        
+      
         var minutototal  = minute - sumaminuto;
         document.getElementById('horaestada').value = " " + horatotal +" : " + minutototal +" : "+ "00";
-      }else{
-            var horatotal = hour - sumahora-1;
-            var minutototal  =  60-( sumaminuto  - minute);
-       
-        document.getElementById('horaestada').value= " " + horatotal +" : " + minutototal+" : "+ "00";
+        //alert(horatotal);
       }
-
-
+      if (minute < sumaminuto  ){
+        horatotal = horatotal - 1;
+        if (horatotal < 0){horatotal = 24-(-horatotal);}
+        minutototal = minute-sumaminuto+60;
+        document.getElementById('horaestada').value = " " + horatotal +" : " + minutototal +" : "+ "00";
+      }
       
        console.log(horatotal,minutototal);
        document.getElementById('mostraracumulada').value= " " + sumahora +" : " + sumaminuto + " : "+"00";
 
+       //fin de hora incio falla 
 
 
 
+
+      // empezar mostrar las horas 
+
+      var gt = [];
+     var horhonduras = horatotal;
+     var minuhonduras = minutototal;
+      var ho=1;
+      for (var h=0; h<20; ){
+        horatotal = horatotal+ho;
+        if(horatotal >= 24){
+            horatotal = 0;
+         }
+         gt[h]= horatotal;
+         
+         h++;
+        }
+
+        ho = 1;
+        // para honduras 
+    
+        if((minuhonduras+30) >= 60){
+            horhonduras = horhonduras+3;
+            minuhonduras = (minuhonduras+30)-60; 
+        } else{
+            minuhonduras = minuhonduras+30;
+            horhonduras = horhonduras+2;
+        }
+        
+    
+          
+      // fin de las horas mostradas
       
-      
-       //operar mis tablas de escalaciones
+    
        
 
 
-    let codigo = document.getElementById('formularios').value;
     //alert(codigo);
+
+    //operacion de tablas 
+
+    let codigo = document.getElementById('formularios').value;
 
     if (codigo == "G1"){
         //alert('hola soy de metro norte');
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Julio Navarijo" +"  " + "58261602" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Manuel Ramirez" +"  " + "58261205" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rene Agustin" +"  " + "58261183" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
-
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Externa METRO SUR";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Julio Navarijo</td><td>58261602</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Manuel Ramirez</td><td>58261205</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Rene Agustin</td><td>58261183</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
         
 
-    } if (codigo == "G2"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Elmer Torres" +"  " + "58260888" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Aldo Diaz" +"  " + "58261057" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rene Agustin" +"  " + "58261183" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
-
-  
     }
+     if (codigo == "G2"){
+       
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Externa METRO SUR";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Elmer Flores</td><td>58260888</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Aldo Diaz</td><td>58261057</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Rene Agustin</td><td>58261183</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+     } 
+    
     
     if (codigo == "G3"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Miguel Angel Calderon" +"  " + "58261558" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Miguel Angel Calderon" +"  " + "58261558" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rene Agustin" +"  " + "58261183" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Externa REGION CENTRAL";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Miguel Angel Calderon</td><td>58261558</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Miguel Angel Calderon</td><td>58261558</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Rene Agustin</td><td>58261183</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
 
   
     }
     if (codigo == "G4"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Jorge Fingado" +"  " + "58261199" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Jorge Fingado" +"  " + "58261199" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rene Agustin" +"  " + "58261183" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Externa REGION OCCIDENTE";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Jorge Fingado</td><td>58261199</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Jorge Fingado</td><td>58261199</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Rene Agustin</td><td>58261183</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
 
   
     }
     if (codigo == "G5"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Leonel Chamo" +"  " + "58261129" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Leonel Chamo" +"  " + "58261129" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rene Agustin" +"  " + "58261183" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Externa REGION ORIENTE";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Leonel Chamo</td><td>58261129</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Leonel Chamo</td><td>58261129</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Rene Agustin</td><td>58261183</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
 
   
     }
     if (codigo == "G6"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Oscar Castillo" +"  " + "58261583" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Edgar Wirtz" +"  " + "55551962" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Rabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"10 horas" + " " +  (horatotal+10) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"18 horas" + " " +  (horatotal+18) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"20 horas" + " " +  (horatotal+20) + ":" +minutototal +":"+ "00";
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Interna REGION METRO";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Oscar Castillo</td><td>58261583</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Edgar Wirtz</td><td>55511962</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Fabricio Ramirez</td><td>58261213</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
 
   
     }
     if (codigo == "G7"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Juan Pablo Gonzalez" +"  " + "58262336" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '1/4'+ " " + "Rafael Molina" +"  " + "58261870" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '1/4'+ " " + "Estuardo Lopez" +"  " + "58261191" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '1/4'+ " " + "Oscar Castillo" +"  " + "58261870" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '2/4'+ " " + "Nestor Cano" +"  " + "58261494" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"16 horas" + " " +  (horatotal+16) + ":" +minutototal +":"+ "00";
-        
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Interna REGION CENTRAL";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Juan Pablo Gonzalez</td><td>58262336</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Rafael Molina</td><td>58261870</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Estuardo López</td><td>58261191</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Oscar Gallardo</td><td>58261734</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Nestor Cano</td><td>58261494</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Fabricio Ramirez</td><td>58261213</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+
   
     }
     if (codigo == "G8"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Jorge Merlos" +"  " + "58261566" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '1/4'+ " " + "Gabriel Moralez" +"  " + "58261195" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '1/4'+ " " + "Jorge Romero" +"  " + "58260702" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '1/4'+ " " + "Emerson Tortola" +"  " + "58261481" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '1/4'+ " " + "Mauricio Gomez" +"  " + "58261560" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '2/4'+ " " + "Carlos Sagastume" +"  " + "58269736" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"14 horas" + " " +  (horatotal+14) + ":" +minutototal +":"+ "00";
-       
-    }
-    if (codigo == "G9"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Luis recinos" +"  " + "58261474" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '1/4'+ " " + "Adolfo Cruz" +"  " + "58261547" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '1/4'+ " " + "Edgar Matul" +"  " + "58261564" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '1/4'+ " " + "Erick Trujillo" +"  " + "58261561" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '1/4'+ " " + "Manuel Mazariegos" +"  " + "58261521" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '1/4'+ " " + "Erick Moralez" +"  " + "58261630" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '2/4'+ " " + "Sergio Mimatuj" +"  " + "58261574" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '3/4'+ " " + "Fabricio Ramirez" +"  " + "58261213" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"8 horas" + " " +  (horatotal+8) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '4/4'+ " " + "Rodolfo Morales" +"  " + "58261609" + "  " +"12 horas" + " " +  (horatotal+12) + ":" +minutototal +":"+ "00";
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Interna REGION ORIENTE";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Jorge Merlos</td><td>58261566</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Gabriel Morales</td><td>58261195</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Jorge Romero</td><td>58260702</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Emerson Tortola</td><td>58261481</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Mauricio Gomez</td><td>58261560</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Carlos Sagastume</td><td>58269736</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Fabricio Ramirez</td><td>58261213</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+
         
     }
+    if (codigo == "G9"){
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento Planta Interna REGION OCCIDENTE";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Luis Recinos</td><td>58261474</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Adolfo Cruz</td><td>58261547</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Edgar Matul</td><td>58261564</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Erick Trujillo</td><td>58261561</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Manuel Mazariegos</td><td>58261521</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Erick Morales</td><td>58261630</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Sergio Nimatuj</td><td>58261574</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Fabricio Ramirez</td><td>58261213</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Rodolfo Morales</td><td>58261609</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+
+       
+    }
     if (codigo == "S1"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ricardo de Paz" +"  " + "50378432633" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento DESPACHO SV";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Ricardo de Paz</td><td>503-78432633</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Humberto Chiquillo</td><td>503-78523419</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Humberto Chiquillo</td><td>503-78523419</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        
   
     }
     if (codigo == "S2"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Manrique Urias" +"  " + "50378030697" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Jairo Ortiz" +"  " + "50378680314" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA REGION CENTRAL SV";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Manrique Urias</td><td>503-78030697</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Jairo Ortiz</td><td>503-78680314</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Humberto Chiquillo</td><td>503-78523419</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
     }
     if (codigo == "S3 "){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Inmer Coreas" +"  " + "50378664767" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Willian Escobar" +"  " + "50379544238" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA REGION  OCCIDENTAL SV";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Inmer Coreas</td><td>503-78664767</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Wilman Escobar</td><td>503-79544238</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Humberto Chiquillo</td><td>503-78523419</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
     }
     if (codigo == "S4"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Jimmy Zelaya" +"  " + "50379869465" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Willian Escobar" +"  " + "50378680314" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Humberto Chiquillo" +"  " + "50378523419" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Oscar Hernandez" +"  " + "50378550164" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res5').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";
-        document.getElementById('res6').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"9 horas" + " " +  (horatotal+9) + ":" +minutototal +":"+ "00";
-        document.getElementById('res7').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"11 horas" + " " +  (horatotal+11) + ":" +minutototal +":"+ "00";
-        document.getElementById('res8').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"13 horas" + " " +  (horatotal+13) + ":" +minutototal +":"+ "00";
-        document.getElementById('res9').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"15 horas" + " " +  (horatotal+15) + ":" +minutototal +":"+ "00";
-        document.getElementById('res10').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"17 horas" + " " +  (horatotal+17) + ":" +minutototal +":"+ "00";
-        document.getElementById('res11').innerHTML = '5/5'+ " " + "Carlos Pasta" +"  " + "50378554474" + "  " +"19 horas" + " " +  (horatotal+19) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA REGION  ORIENTAL SV";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Jimmy Zelaya</td><td>503-79869465</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Eduardo Gonzalez</td><td>503-78554483</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Humberto Chiquillo</td><td>503-78523419</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
     }
     if (codigo == "HN1"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Luis Sandres" +"  " + "50489904245" + "  " +"2.5 horas" + " " +  (horatotal+2.5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Franklin Hueso" +"  " + "50489904208" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Manuel Larios" +"  " + "50431921638" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA INTERNA CCR HN";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Luis Sandres</td><td>504-89904245</td><td>2.5 horas </td><td>${horhonduras} : ${minuhonduras} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Franklin Bueso</td><td>504-89904208</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Manuel Larios</td><td>504-31921638</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>6 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>14 horas </td><td>${gt[13]} : ${minutototal} : 00</td></tr>`;
     }
     if (codigo == "HN2"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ana Carolina Ordoñez" +"  " + "50433915065" + "  " +"2.5 horas" + " " +  (horatotal+2) + ":" +(minutototal+30)+":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Saul Pastor" +"  " + "50433915357" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Pastor Ramirez" +"  " + "50433910016" + "  " +"7 horas" + " " +  (horatotal+7) + ":" +minutototal +":"+ "00";   
+         
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA HN";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Ana Carolina Ordoñez</td><td>504-33915065</td><td>2.5 horas </td><td>${horhonduras} : ${minuhonduras} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Saul Pastor</td><td>504-33915357</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Saul Pastor</td><td>504-33915357</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>6 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Pastor Ramirez</td><td>504-33910016</td><td>14 horas </td><td>${gt[13]} : ${minutototal} : 00</td></tr>`;
+        
     }
     if (codigo == "NI1"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Nacxhitl Bernardino" +"  " + "50587134513" + "  " +"3 horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Marlon Jaime" +"  " + "50588500414" + "  " +"4 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Norman Selva" +"  " + "50588561050" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Mario Hurtado" +"  " + "50588538938" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA INTERNA NICARAGUA";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Nacxhitl Bernardnio</td><td>505-87134513</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Marlon Jaime</td><td>505-88500414</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Norman Selva</td><td>505-88561050</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>14 horas </td><td>${gt[13]} : ${minutototal} : 00</td></tr>`;
+        
     }
     if (codigo == "NI2"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Diester Lira" +"  " + "50588524472" + "  " +"2horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Wilfredo Arauz" +"  " + "50589304959" + "  " +"3 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gaddy Zepeda" +"  " + "50588501214" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Mario Huratado" +"  " + "50588538938" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA NICARAGUA";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Diester Lira</td><td>505-88524472</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Wilfredo Arauz</td><td>505-89304959</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Gaddy Zepeda</td><td>505-88501214</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Mario Hurtado</td><td>505-88538938</td><td>14 horas </td><td>${gt[13]} : ${minutototal} : 00</td></tr>`;
     }
     if (codigo == "CR1"){
-        document.getElementById('res1').innerHTML = '1/4'+ " " + "Ingeniero IM" +"  " + "506-70028958" + "  " +"2horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/4'+ " " + "Marco Salazar" +"  " + "506-70020778" + "  " +"3 horas" + " " +  (horatotal+4) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gilberto Fernandez" +"  " + "506-70029441" + "  " +"5 horas" + " " +  (horatotal+5) + ":" +minutototal +":"+ "00";
-        document.getElementById('res4').innerHTML = '4/4'+ " " + "Luis Ivan Ortiza" +"  " + "506-70025268" + "  " +"6 horas" + " " +  (horatotal+6) + ":" +minutototal +":"+ "00";   
+
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  CCR COSTA RICA";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/4</td><td>Ingeniero IM</td><td>506-70028958</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/4</td><td>Marco Salazar</td><td>506-70020778</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>3/4</td><td>Gilberto Fernandez </td><td>506-70029441</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Luis Ivan Ortiz</td><td>506-70025268</td><td>6 horas </td><td>${gt[5]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Luis Ivan Ortiz</td><td>506-70025268</td><td>8 horas </td><td>${gt[7]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Luis Ivan Ortiz</td><td>506-70025268</td><td>10 horas </td><td>${gt[9]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>4/4</td><td>Luis Ivan Ortiz</td><td>506-70025268</td><td>12 horas </td><td>${gt[11]} : ${minutototal} : 00</td></tr>`;
     }
 
     if (codigo == "CRP1"){
-        document.getElementById('res1').innerHTML = '1/3'+ " " + "CCR PANAMÁ" +"  " + "MOVIL: 507-62284503 , FIJO: 507-29411891" + "  " +"Inmeditado" + " " +  (horatotal) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/3'+ " " + "CCR PANAMÁ" +"  " + "MOVIL: 507-62284503 , FIJO: 507-29411891" + "  " +"1 horas" + " " +  (horatotal+1) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gerente NOC" +"  " + "507-66703927" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  CCR CLARO PANAMA";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th><th></th><th></th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>CCR PANAMA</td><td>NOC CLARO</td><td>nocpanama@claro.com.pa</td><td>Movil:507-62284503 <br> Fijo: 507-2941891</td><td>Inmediata</td><td>${horatotal} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/3</td><td>CCR PANAMA</td><td>NOC CLARO</td><td>nocpanama@claro.com.pa</td><td>Movil:507-62284503 <br> Fijo: 507-2941891</td><td>1 hora</td><td>${gt[0]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Demetrio Ortega</td><td>Gerente NOC</td><td>demetrio.ortega@cwpanama.com</td><td>Movil:507-66703927</td><td>2 horas</td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
     }
+    
+        
     if (codigo == "CRP2"){
-        document.getElementById('res1').innerHTML = '1/3'+ " " + "Joaquin Carrasco" +"  " + " 507-62053224" + "  " +"1 hora" + " " +  (horatotal+1) + ":" +minutototal +":"+ "00";
-        document.getElementById('res2').innerHTML = '2/3'+ " " + "Luniel Castillo" +"  " + " 507-62045572" + "  " +"2 horas" + " " +  (horatotal+2) + ":" +minutototal +":"+ "00";
-        document.getElementById('res3').innerHTML = '3/4'+ " " + "Gerente técnico" +"  " + " " + "  " +"3  horas" + " " +  (horatotal+3) + ":" +minutototal +":"+ "00";
+        document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA PANAMA";
+        document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th><th></th><th></th></tr>`
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Joaquin Carrasco</td><td>Supervisor Planta externa</td><td>joaquin.carrasco@claro.com.pa</td><td>507-62053224</td><td>1 hora</td><td>${gt[0]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>2/3</td><td>Luneil Castillo</td><td>Mantenimiento Planta Externa</td><td>luneil.castillo@claro.com.pa</td><td>507-62045572</td><td>2 hora</td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Pendiente</td><td>Gerente Técnico</td><td></td><td></td><td>3 horas</td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Pendiente</td><td>Gerente Técnico</td><td></td><td></td><td>5 horas</td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Pendiente</td><td>Gerente Técnico</td><td></td><td></td><td>7 horas</td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/3</td><td>Pendiente</td><td>Gerente Técnico</td><td></td><td></td><td>9 horas</td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
     }
     /*let combo = document.getElementById('formularios');
     let selected = combo.options[combo.selecedIndex].text;
@@ -455,18 +532,10 @@ function limpiar (){
     limpiarr.reset(); 
     limpiarr1.reset(); 
     limpiartod.reset();
-   
-    document.getElementById('res1').innerHTML = '';
-    document.getElementById('res2').innerHTML = '';
-    document.getElementById('res3').innerHTML = '';
-    document.getElementById('res4').innerHTML = '';
-    document.getElementById('res5').innerHTML = '';
-    document.getElementById('res6').innerHTML = '';
-    document.getElementById('res7').innerHTML = '';
-    document.getElementById('res8').innerHTML = '';
-    document.getElementById('res9').innerHTML = '';
-    document.getElementById('res10').innerHTML = '';
-    document.getElementById('res11').innerHTML = '';
+    document.getElementById('dass').innerHTML = " ";
+    document.getElementById('nombreregion').innerHTML = " ";
+    
+    
     
    
 }
