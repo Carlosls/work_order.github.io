@@ -398,10 +398,10 @@ function operar (){
         document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Raul Pérez</td><td>503-79515695</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Raul Pérez</td><td>503-79515695</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon </td><td>503 7760 0008</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
         
   
     }
@@ -412,10 +412,11 @@ function operar (){
         document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Wilmar Escobar</td></td><td>503-79544238</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Raul Pérez</td><td>503-79515695</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon </td><td>503 7760 0008</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        
     }
     if (codigo == "S3 "){
         document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA REGION  OCCIDENTAL SV";
@@ -424,10 +425,11 @@ function operar (){
         document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Jairo Ortiz</td><td>503-78680314</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Raul Pérez</td><td>503-79515695</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon </td><td>503 7760 0008</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        
     }
     if (codigo == "S4"){
         document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA EXTERNA REGION  ORIENTAL SV";
@@ -436,10 +438,11 @@ function operar (){
         document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Eduardo Gonzalez</td><td>503-78554483</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Raul Pérez</td><td>503-79515695</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
-        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Carlos Paspa</td><td>503-78554474</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>7 horas </td><td>${gt[6]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>9 horas </td><td>${gt[8]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon</td><td>503 7760 0008</td><td>11 horas </td><td>${gt[10]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>5/5</td><td>Saul de Leon </td><td>503 7760 0008</td><td>13 horas </td><td>${gt[12]} : ${minutototal} : 00</td></tr>`;
+        
     }
     if (codigo == "HN1"){
         document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento  PLANTA INTERNA CCR HN";
