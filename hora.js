@@ -394,7 +394,7 @@ function operar (){
     if (codigo == "S1"){
         document.getElementById('nombreregion').innerHTML = "Tabla de Escalamiento DESPACHO SV";
         document.getElementById('dass').innerHTML += `<tr><th>No.Escalacion</th><th>Nombre de Supervisor</th><th>Numero</th><th>Tiempo</th><th>Proxima escalacion</th></tr>`
-        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Sergio Perdomo</td><td>503-78689964</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
+        document.getElementById('dass').innerHTML += `<tr><td>1/5</td><td>Ricardo de Paz</td><td>503-78432633</td><td>2 horas </td><td>${gt[1]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>2/5</td><td>Raul Pérez</td><td>503-79515695</td><td>3 horas </td><td>${gt[2]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>3/5</td><td>Raul Pérez</td><td>503-79515695</td><td>4 horas </td><td>${gt[3]} : ${minutototal} : 00</td></tr>`;
         document.getElementById('dass').innerHTML += `<tr><td>4/5</td><td>Oscar Hernandez</td><td>503-78550164</td><td>5 horas </td><td>${gt[4]} : ${minutototal} : 00</td></tr>`;
